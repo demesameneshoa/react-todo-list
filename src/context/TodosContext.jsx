@@ -4,7 +4,7 @@ import {
     createContext,
     useContext,
   } from 'react';
-
+  import PropTypes from 'prop-types';
   import { v4 as uuidv4 } from 'uuid';
 
 const TodosContext = createContext(null);
@@ -74,5 +74,8 @@ export const TodosProvider = ({ children }) => {
   );
 };
 
+TodosProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+}
 
 export const useTodosContext = () => useContext(TodosContext);
